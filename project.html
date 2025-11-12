@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore Projects | CLC Robotics & Coding Exhibition 2025</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Rajdhani:wght@500;600&family=Source+Code+Pro:wght@500&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #e6f7ff, #ffffff);
+            font-family: 'Rajdhani', sans-serif;
+            color: #002244;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 50px 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        header h1 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 60px;
+            color: #003366;
+            text-shadow: 0 0 15px #99e6ff;
+        }
+
+        header p {
+            font-size: 22px;
+            color: #004080;
+            margin-top: 10px;
+        }
+
+        .projects-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            width: 100%;
+            max-width: 1200px;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0, 128, 255, 0.2);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 6px 25px rgba(0, 128, 255, 0.4);
+        }
+
+        .project-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .project-info {
+            padding: 20px;
+        }
+
+        .project-info h3 {
+            font-size: 22px;
+            color: #003366;
+            margin-bottom: 10px;
+        }
+
+        .project-info p {
+            color: #004080;
+            font-size: 18px;
+        }
+
+        .btn-back {
+            margin-top: 50px;
+            padding: 14px 40px;
+            font-size: 20px;
+            border: none;
+            border-radius: 40px;
+            background: linear-gradient(90deg, #00aaff, #3399ff, #00c3ff);
+            color: white;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 0 20px rgba(0, 153, 255, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        .btn-back:hover {
+            transform: scale(1.07);
+            background: linear-gradient(90deg, #00bfff, #33ccff, #66ffff);
+            box-shadow: 0 0 30px rgba(0, 153, 255, 0.7);
+        }
+
+        footer {
+            margin-top: 60px;
+            font-family: 'Source Code Pro', monospace;
+            color: #004080;
+            font-size: 16px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Student Robotics Projects</h1>
+        <p>Explore innovative creations from our talented CLC students</p>
+    </header>
+
+    <div class="projects-container">
+
+        <div class="project-card">
+            <img src="line.jpg" alt="Line Following Robot">
+            <div class="project-info">
+                <h3>Line Following Robot</h3>
+                <p>An Arduino-powered robot that follows a track using IR sensors and smart algorithms.</p>
+            </div>
+        </div>
+
+        
+
+        <div class="project-card">
+            <img src="bluetooth car.jpg" alt="Bluetooth Car">
+            <div class="project-info">
+                <h3>Bluetooth Car</h3>
+                <p>A remote-controlled car operated using a mobile app via Bluetooth.</p>
+            </div>
+        </div>
+
+
+        <div class="project-card">
+            <img src="remote control car.png" alt="Remote Control Car">
+            <div class="project-info">
+                <h3>Remote Control Car</h3>
+                <p>A wireless RC car built using motors, gears, and an RF controller.</p>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <img src="Motion bulb.png" alt="Motion Bulb">
+            <div class="project-info">
+                <h3>PIR Motion Automatic Bulb</h3>
+                <p>A light that switches on when movement is detected.</p>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <img src="Obstacle avoiding Robot.png" alt="Obstacle Avoiding Robot">
+            <div class="project-info">
+                <h3>Obstacle Avoiding Robot</h3>
+                <p>A robot that detects obstacles using ultrasonic sensors and avoids them.</p>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <img src="RFID Parking System.png" alt="RFID Parking System">
+            <div class="project-info">
+                <h3>RFID Parking System</h3>
+                <p>Automates vehicle entry and exit using RFID tags and readers.</p>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <img src="Laser Alarm Door.png" alt="Laser Alarm Door">
+            <div class="project-info">
+                <h3>Laser Alarm Door</h3>
+                <p>Creates an invisible laser security barrier with an LDR sensor.</p>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <img src="Laser Solar Detector.png" alt="Laser Solar Detector">
+            <div class="project-info">
+                <h3>Laser Solar Detector</h3>
+                <p>A security system using a laser beam and LDR to detect interruptions.</p>
+            </div>
+        </div>
+
+    </div>
+
+  <!-- Exit Button -->
+<button class="btn-back" onclick="goBack()">Back to Explore</button>
+
+<script>
+function goBack() {
+    if (window.history.length > 1) {
+        window.history.back();
+    } else {
+        window.location.href = "explore.html";
+    }
+}
+</script>
+
+    <footer>Designed by Robotics & Coding Club | CLC International School</footer>
+
+</body>
+</html>

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CIS Sikar | Coding & AI</title>
+<style>
+    /* Exit Button */
+.exit-btn {
+    position: fixed;
+    top: 15px;
+    right: 25px;
+    background: linear-gradient(45deg, #ff3c78, #ff007f);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 50px;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.9em;
+    letter-spacing: 1px;
+    cursor: pointer;
+    z-index: 1100;
+    box-shadow: 0 0 15px rgba(255,60,120,0.6);
+    transition: all 0.3s ease;
+}
+.exit-btn:hover {
+    background: linear-gradient(45deg, #00ffea, #00b3ff);
+    box-shadow: 0 0 20px rgba(0,255,234,0.8);
+    transform: scale(1.05);
+}
+
+    * { margin:0; padding:0; box-sizing:border-box; font-family:Arial,sans-serif; }
+    body { background:#0f0f0f; color:#fff; line-height:1.6; overflow-x:hidden; }
+    a { text-decoration:none; color:inherit; }
+    nav { display:flex; justify-content:space-between; align-items:center; padding:1rem 5%; background:rgba(26,26,26,0.95); position:sticky; top:0; z-index:100; }
+    nav .logo { font-size:1.8rem; font-weight:bold; color:#00d8ff; }
+    nav ul { display:flex; list-style:none; }
+    nav ul li { margin-left:2rem; }
+    nav ul li a { color:#fff; font-weight:500; transition:0.3s; }
+    nav ul li a:hover { color:#00d8ff; }
+
+    /* Hero */
+    .hero { position:relative; height:100vh; display:flex; justify-content:center; align-items:center; text-align:center; color:#fff; overflow:hidden; }
+    #particles-js { position:absolute; top:0; left:0; width:100%; height:100%; z-index:0; }
+    .hero-content { position:relative; z-index:1; max-width:800px; }
+    .hero h1 { font-size:3rem; margin-bottom:1rem; color:#00d8ff; }
+    .hero p { font-size:1.2rem; margin-bottom:2rem; color:#ccc; }
+    .hero .btn { padding:0.8rem 2rem; background:#00d8ff; color:#0f0f0f; border:none; border-radius:5px; font-weight:bold; cursor:pointer; transition:0.3s; }
+    .hero .btn:hover { background:#00b5e6; }
+
+    /* Features */
+    .features { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:2rem; padding:5rem 5%; background:#111; }
+    .feature-card { background:#1a1a1a; border-radius:10px; overflow:hidden; text-align:center; transition:0.3s; }
+    .feature-card img { width:100%; height:200px; object-fit:cover; }
+    .feature-card .content { padding:1.5rem; }
+    .feature-card h3 { margin-bottom:1rem; color:#00d8ff; }
+    .feature-card p { color:#ccc; }
+    .feature-card:hover { transform:translateY(-10px); background:#222; }
+
+    /* Projects */
+    .projects { padding:5rem 5%; background:#0d0d0d; }
+    .projects h2 { text-align:center; color:#00d8ff; margin-bottom:3rem; }
+    .project-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:2rem; }
+    .project-card { background:#1a1a1a; border-radius:10px; overflow:hidden; transition:0.3s; }
+    .project-card img { width:100%; height:200px; object-fit:cover; }
+    .project-card .content { padding:1.5rem; color:#ccc; }
+    .project-card h4 { margin-bottom:1rem; color:#00d8ff; }
+    .project-card:hover { transform:translateY(-10px); background:#222; }
+
+    footer { text-align:center; padding:2rem; background:#1a1a1a; color:#888; }
+    @media(max-width:768px){ .hero h1{ font-size:2.2rem; } }
+</style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav>
+   <center>
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul></center>
+</nav>
+
+<!-- Hero Section -->
+<section class="hero" id="home">
+    <div id="particles-js"></div>
+    <div class="hero-content">
+        <h1>Explore Modern AI & Coding</h1>
+        <p>Join CIS Sikar to learn, innovate, and build cutting-edge computer solutions. Dive into AI, coding, and networking with hands-on projects!</p>
+        <button class="btn">Get Started</button>
+    </div>
+
+
+</section>
+
+<!-- Features Section -->
+<section class="features" id="features">
+    <div class="feature-card">
+     
+        <div class="content">
+            <h3>Coding Bootcamps</h3>
+            <p>Learn modern programming languages and frameworks to build real-world applications.</p>
+        </div>
+    </div>
+    <div class="feature-card">
+     
+        <div class="content">
+            <h3>AI & Machine Learning</h3>
+            <p>Explore AI technologies, build models, and implement intelligent systems.</p>
+        </div>
+    </div>
+    <div class="feature-card">
+
+        <div class="content">
+            <h3>Networking & Security</h3>
+            <p>Understand computer networks, cybersecurity, and IT infrastructure essentials.</p>
+        </div>
+    </div>
+    <div class="feature-card">
+        <div class="content">
+            <h3>Web Development</h3>
+            <p>Create modern, responsive websites with HTML, CSS, JavaScript, and frameworks.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Projects Section -->
+<section class="projects" id="projects">
+    <h2>Our Projects</h2>
+    <div class="project-grid">
+        <div class="project-card">
+            <div class="content">
+                <h4>Jarvis</h4>
+                <p>Jarvis is an AI voice assistant that listens to your commands and performs tasks like searching, speaking, opening apps, or automating daily activities. It makes computers feel more interactive and intelligent.</p>
+            </div>
+        </div>
+        <div class="project-card">
+            
+            <div class="content">
+                <h4>Virtual piano</h4>
+                <p>Jarvis is an AI voice assistant that listens to your commands and performs tasks like searching, speaking, opening apps, or automating daily activities. It makes computers feel more interactive and intelligent.</p>
+            </div>
+        </div>
+        <div class="project-card">
+            <div class="content">
+                <h4>Face attendace</h4>
+                <p>Face Attendance uses face-recognition technology to record attendance automatically. It is fast, touch-free, and accurate, making it useful for schools, offices, and secure environments.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>
+    &copy; 2025 CIS Sikar | All Rights Reserved
+</footer>
+
+<!-- Particles.js library -->
+<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+<script>
+particlesJS("particles-js", {
+    "particles": {
+        "number": { "value": 80 },
+        "color": { "value": "#00d8ff" },
+        "shape": { "type": "circle" },
+        "opacity": { "value": 0.5 },
+        "size": { "value": 3 },
+        "line_linked": { "enable": true, "distance": 150, "color": "#00d8ff", "opacity": 0.4, "width": 1 },
+        "move": { "enable": true, "speed": 2, "direction": "none", "random": false, "straight": false }
+    },
+    "interactivity": {
+        "detect_on": "canvas",
+        "events": { "onhover": { "enable": true, "mode": "grab" }, "onclick": { "enable": true, "mode": "push" } },
+        "modes": { "grab": { "distance": 200, "line_linked": { "opacity": 0.6 } }, "push": { "particles_nb": 4 } }
+    },
+    "retina_detect": true
+});
+</script>
+<!-- Exit Button -->
+<button class="exit-btn" onclick="goBack()">Back To Explore CIS</button>
+
+<script>
+function goBack() {
+    // Check if there's a previous page
+    if (window.history.length > 1) {
+        window.history.back();
+    } else {
+        // Fallback: redirect to your homepage or main site
+        window.location.href = "explore.html"; 
+    }
+}
+</script>
+
+
+</body>
+</html>

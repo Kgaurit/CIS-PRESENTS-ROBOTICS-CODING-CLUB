@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore CLC International School</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Playfair+Display:wght@600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: radial-gradient(circle at 20% 20%, #f0f8ff 0%, #e5f3ff 40%, #d0e8ff 100%);
+            font-family: 'Inter', sans-serif;
+            color: #002244;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* === Floating Gradient Orbs === */
+        .orb {
+            position: fixed;
+            width: 400px;
+            height: 400px;
+            border-radius: 50%;
+            filter: blur(160px);
+            opacity: 0.4;
+            z-index: 0;
+            animation: orbMove 30s ease-in-out infinite alternate;
+        }
+
+        .orb.blue {
+            background: #00aaff;
+            top: -150px;
+            left: -150px;
+        }
+
+        .orb.purple {
+            background: #3399ff;
+            bottom: -150px;
+            right: -150px;
+        }
+
+        @keyframes orbMove {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(50px, -50px); }
+        }
+
+        /* === Logo === */
+        .logo {
+            position: fixed;
+            top: 20px;
+            left: 30px;
+            width: 200px;
+            filter: drop-shadow(0 0 10px #66ccff);
+            animation: logoPulse 4s ease-in-out infinite;
+            z-index: 100;
+        }
+
+        @keyframes logoPulse {
+            0%, 100% {
+                transform: scale(1);
+                filter: drop-shadow(0 0 10px #66ccff);
+            }
+            50% {
+                transform: scale(1.05);
+                filter: drop-shadow(0 0 25px #00bfff);
+            }
+        }
+
+        /* === Hero Section === */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            color: #003366;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://cdn.pixabay.com/photo/2016/03/27/20/57/school-1284304_1280.jpg') center/cover no-repeat;
+            filter: brightness(0.8) blur(2px);
+            z-index: 0;
+        }
+
+        .hero h1 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 64px;
+            font-weight: 700;
+            text-shadow: 0 0 25px #b3e6ff;
+            animation: fadeSlideDown 1.2s ease forwards;
+            z-index: 2;
+        }
+
+        .hero p {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            margin-top: 20px;
+            max-width: 800px;
+            z-index: 2;
+            opacity: 0;
+            animation: fadeSlideUp 2s ease forwards;
+            animation-delay: 0.4s;
+        }
+
+        .hero button {
+            margin-top: 50px;
+            padding: 16px 50px;
+            font-size: 20px;
+            color: white;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            background: linear-gradient(90deg, #00aaff, #33bbff, #66ccff);
+            box-shadow: 0 0 25px rgba(0, 153, 255, 0.5);
+            overflow: hidden;
+            position: relative;
+            z-index: 2;
+            transition: transform 0.3s ease;
+        }
+
+        .hero button:hover {
+            transform: scale(1.08);
+            box-shadow: 0 0 40px rgba(0, 153, 255, 0.8);
+        }
+
+        /* === Animations === */
+        @keyframes fadeSlideDown {
+            from { opacity: 0; transform: translateY(-40px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeSlideUp {
+            from { opacity: 0; transform: translateY(40px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+        /* === Section Title === */
+        .section-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 46px;
+            color: #004080;
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            width: 120px;
+            height: 4px;
+            background: linear-gradient(90deg, #00aaff, #33ccff);
+            border-radius: 2px;
+            transform: translateX(-50%);
+            animation: glowLine 3s linear infinite;
+        }
+
+        @keyframes glowLine {
+            0% { box-shadow: 0 0 10px #00aaff; }
+            50% { box-shadow: 0 0 25px #33ccff; }
+            100% { box-shadow: 0 0 10px #00aaff; }
+        }
+
+        /* === Highlights === */
+        .highlights {
+            padding: 100px 10%;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 0 25px rgba(0, 153, 255, 0.15);
+            overflow: hidden;
+            transform: translateY(60px);
+            opacity: 0;
+            transition: all 1s ease;
+        }
+
+        .card.visible {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .card h3 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 24px;
+            color: #004080;
+            margin: 20px 0 10px;
+        }
+
+        .card p {
+            font-size: 17px;
+            color: #003366;
+            padding: 0 20px 30px;
+        }
+
+        /* === Gallery === */
+        .gallery {
+            background: linear-gradient(135deg, #f2f9ff, #e4f1ff);
+            padding: 100px 10%;
+            text-align: center;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 30px;
+        }
+
+        .gallery-grid img {
+            width: 100%;
+            height: 230px;
+            border-radius: 15px;
+            box-shadow: 0 0 25px rgba(0, 153, 255, 0.15);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        .gallery-grid img:hover {
+            transform: rotate3d(1, 1, 0, 6deg) scale(1.05);
+            box-shadow: 0 0 40px rgba(0, 153, 255, 0.5);
+        }
+
+        /* === Contact === */
+        .contact {
+            text-align: center;
+            padding: 100px 20px;
+            background: white;
+        }
+
+        .contact h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 42px;
+            color: #003f7f;
+        }
+
+        .contact p {
+            font-size: 18px;
+            color: #003366;
+            margin: 20px auto 35px;
+            max-width: 700px;
+        }
+
+        .contact button {
+            padding: 15px 40px;
+            border: none;
+            border-radius: 50px;
+            background: linear-gradient(90deg, #00bfff, #33ccff, #66ffff);
+            color: white;
+            font-family: 'Poppins', sans-serif;
+            font-size: 18px;
+            box-shadow: 0 0 25px rgba(0, 153, 255, 0.5);
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .contact button:hover {
+            transform: scale(1.08);
+            box-shadow: 0 0 40px rgba(0, 153, 255, 0.7);
+        }
+
+        footer {
+            background: #004080;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 15px;
+        }
+        .light{
+                color:pink;
+                size: 20px;
+                 font-size: 24px;
+                text-decoration: none;
+        }
+       .god {
+                color:pink;
+                size: 20px;
+                 font-size: 24px;
+                text-decoration: none;
+        }
+       .king {
+                color:pink;
+                size: 20px;
+                 font-size: 24px;
+                text-decoration: none;
+        }
+        .raja{
+                color:pink;
+                size: 20px;
+                 font-size: 24px;
+                text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Floating Orbs -->
+    <div class="orb blue"></div>
+    <div class="orb purple"></div>
+
+    <!-- Logo -->
+    <img src="logo.png" alt="CLC Logo" class="logo">
+
+    <!-- Hero -->
+    <section class="hero">
+        <i><h1>Explore CLC International School</h1></i>
+        <p>Discover innovation, imagination, and inspiration — the essence of learning at CLC, where every child codes their own success story.</p>
+       <!-- Exit Button -->
+        <button class="exit-btn" onclick="goBack()">Back to Exhibition</button>
+
+        <script>
+function goBack() {
+    if (window.history.length > 1) {
+        window.history.back();
+    } else {
+        window.location.href = "explore.html";
+    }
+}
+        </script>
+
+<style>
+.back-btn {
+    padding: 12px 30px;
+    font-size: 16px;
+    font-family: 'Rajdhani', sans-serif;
+    background: linear-gradient(90deg, #00aaff, #66ccff);
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0, 170, 255, 0.5);
+    transition: all 0.3s ease;
+}
+
+.back-btn:hover {
+    background: linear-gradient(90deg, #66ccff, #00aaff);
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 170, 255, 0.7);
+}
+</style>
+
+
+    </section>
+   <center><img src="22.jpg.webp" alt="cissikar"></center>
+
+
+    <!-- =================== STORY SECTION (NEW) =================== -->
+    <section class="story" style="padding: 100px 10%; text-align: center; position: relative; z-index: 1;">
+        <h2 class="section-title">The Real Story of CIS</h2>
+
+        <p style="
+            font-size: 20px;
+            max-width: 900px;
+            margin: 0 auto;
+            line-height: 1.8;
+            color: #003366;
+            font-family: 'Inter', sans-serif;
+        ">
+            CLC International School was born from a bold dream — a dream to create a place where learning goes
+            beyond textbooks. A place where curiosity sparks innovation, where creativity meets technology, and
+            where every student discovers their true potential.
+
+            <br><br>
+
+            From just a small vision to becoming one of the most dynamic and future-ready schools, CLC continues
+            to inspire young minds through modern education, values, and world-class opportunities. Today,
+            CLC is not just a school — it is a community where students imagine, build, explore, and excel.
+        </p>
+    </section>
+    <!-- ========================================================== -->
+
+
+    <!-- Highlights Section -->
+    <section class="highlights">
+        <i><h2 class="section-title">School Highlights</h2></i>
+
+        <div class="cards">
+            <div class="card">
+                <u><h3>Innovation Lab</h3></u>
+                <p>Where robotics, circuits, and AI come alive.</p>
+            </div>
+
+            <div class="card">
+                <u><h3>Smart Learning</h3></u>
+                <p>Modern classrooms with advanced teaching tools.</p>
+            </div>
+
+            <div class="card">
+                <u><h3>Creative Excellence</h3></u>
+                <p>Arts, sports, coding & competitions for growth.</p>
+            </div>
+        </div>
+         </div>
+         <br><br>
+             <div class="card">
+                <u><h3>Co-curricular activities</h3></u>
+            <p>rangoli making compition,art making compition for students interest </p>
+            </div>
+             </div>
+            </section>
+
+    <!-- Gallery -->
+    <section class="gallery">
+        <h2 class="section-title">Campus & Activities</h2>
+
+        <div class="gallery-grid">
+
+            <section id="gallery">
+                
+    <div class="features">
+        <a class="light" href="robotics.html" target="_blank">
+            <div class="gallery-item">
+                <img src="robotics lab photo.png" alt="Robotics">
+                <i><b><p>Robotics Lab</p></b></i>
+            </div>
+        </a>
+    </div>
+</section>
+
+            
+            <div class="gallery-item">
+    <a class="god"href="coding.html" target="_blank">
+        <img src="it lab photo.png" alt="Coding">
+        <i><b><p>IT / Computer Lab</p></b></i>
+    </a>
+</div>
+
+        <div class="gallery-item">
+    <a class="king"href="classroom.html" target="_blank">
+        <img src="classrome.png" alt="Students">
+        <i><b><p>Classroom</p></b></i>
+    </a>
+</div>
+
+
+            <div class="gallery-item">
+    <a class="raja" href="school.html" target="_blank">
+        <img src="ff.png.jpg" alt="Campus">
+        <i><b><p>School Campus</p></b></i>
+    </a>
+</div>
+
+
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="contact">
+        <h2>Join the Future with CIS</h2>
+        <p>Be a part of a visionary institution that integrates education with innovation. Let's build the future together.</p>
+        <button onclick="window.open('https://cissikar.com/')">Visit Official Website</button>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        © 2025 CLC International School | Designed by Robotics & Coding Club
+    </footer>
+
+    <script>
+        const cards = document.querySelectorAll('.card');
+        window.addEventListener('scroll', () => {
+            const trigger = window.innerHeight * 0.85;
+            cards.forEach(card => {
+                const top = card.getBoundingClientRect().top;
+                if (top < trigger) {
+                    card.classList.add('visible');
+                }
+            });
+        });
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CIS Sikar Robotics Lab</title>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* Reset */
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Roboto', sans-serif; background:#0a0f23; color:#fff; overflow-x:hidden; }
+a { text-decoration:none; color: inherit; }
+
+/* Navigation */
+nav {
+    position: fixed; top:0; width:100%;
+    background: rgba(0,0,0,0.7);
+    display:flex; justify-content:center; padding:15px 0; z-index:1000;
+}
+nav a { margin:0 25px; font-weight:500; color:#00ffea; transition:0.3s; }
+nav a:hover { color:#ff3c78; }
+
+/* Header */
+header {
+    height:100vh;
+    display:flex; flex-direction:column;
+    justify-content:center; align-items:center;
+    text-align:center;
+    position:relative;
+    overflow:hidden;
+}
+header::before {
+    content:""; position:absolute; top:0; left:0; width:100%; height:100%;
+    background: url('https://images.unsplash.com/photo-1581091012184-14c7e2902f64?auto=format&fit=crop&w=1950&q=80') center/cover no-repeat;
+    opacity:0.2; z-index:-1;
+    animation: moveBackground 20s linear infinite;
+}
+header h1 {
+    font-family:'Orbitron', sans-serif;
+    font-size:4em; color:#00ffea; letter-spacing:2px;
+    animation: fadeInDown 2s ease forwards;
+}
+header p {
+    margin-top:20px; font-size:1.5em; color:#ffffffaa;
+    animation: fadeInUp 2s ease forwards;
+}
+
+/* Floating Shapes */
+.shape {
+    position:absolute; border-radius:50%; opacity:0.15;
+    background: #00ffea;
+    animation: floatShape 10s ease-in-out infinite;
+}
+
+/* Section */
+section { padding:100px 20px; max-width:1200px; margin:auto; }
+section h2 {
+    font-family:'Orbitron', sans-serif; font-size:3em;
+    text-align:center; margin-bottom:50px;
+    background: linear-gradient(90deg,#00ffea,#ff3c78);
+    -webkit-background-clip:text; -webkit-text-fill-color:transparent;
+    animation: fadeInUp 2s ease forwards;
+}
+section p {
+    text-align:center; max-width:900px; margin:auto; font-size:1.2em; color:#ffffffcc;
+    margin-bottom:50px;
+}
+
+/* Features Cards */
+.features { display:flex; flex-wrap:wrap; gap:40px; justify-content:center; }
+.card {
+    background: rgba(255,255,255,0.05);
+    border:1px solid rgba(255,255,255,0.1);
+    border-radius:20px; flex:1 1 300px; max-width:350px;
+    padding:25px; text-align:center; backdrop-filter:blur(10px);
+    transition: transform 0.5s, box-shadow 0.5s;
+}
+.card:hover { transform: translateY(-15px) scale(1.05); box-shadow:0 15px 30px rgba(0,255,234,0.5); }
+.card img {
+    width:100%; height:220px; object-fit:cover;
+    border-radius:15px; margin-bottom:20px; transition: transform 0.5s;
+}
+.card:hover img { transform: scale(1.1) rotate(2deg); }
+.card h3 { font-family:'Orbitron', sans-serif; margin-bottom:10px; color:#00ffea; font-size:1.4em; }
+.card p { color:#ffffffcc; font-size:1em; line-height:1.6; }
+
+/* Contact Button */
+.contact-btn {
+    display:inline-block; background:#00ffea; color:#0a0f23;
+    padding:15px 30px; border-radius:50px; font-weight:500; transition:0.3s;
+}
+.contact-btn:hover { background:#ff3c78; color:#fff; }
+
+/* Exit Button */
+.exit-btn {
+    position: fixed;
+    top: 15px;
+    right: 25px;
+    background: linear-gradient(45deg, #ff3c78, #ff007f);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 50px;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.9em;
+    letter-spacing: 1px;
+    cursor: pointer;
+    z-index: 1100;
+    box-shadow: 0 0 15px rgba(255,60,120,0.6);
+    transition: all 0.3s ease;
+}
+.exit-btn:hover {
+    background: linear-gradient(45deg, #00ffea, #00b3ff);
+    box-shadow: 0 0 20px rgba(0,255,234,0.8);
+    transform: scale(1.05);
+}
+
+/* Footer */
+footer { text-align:center; padding:40px 20px; background:#0f2027; color:#fff; }
+
+/* Animations */
+@keyframes fadeInDown { from {opacity:0; transform: translateY(-50px);} to {opacity:1; transform: translateY(0);} }
+@keyframes fadeInUp { from {opacity:0; transform: translateY(50px);} to {opacity:1; transform: translateY(0);} }
+@keyframes floatShape {
+    0%,100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-30px) rotate(180deg); }
+}
+@keyframes moveBackground { 0%{background-position:0 0;} 100%{background-position:1000px 0;} }
+
+/* Responsive */
+@media(max-width:768px) { 
+    .features { flex-direction:column; align-items:center; } 
+    header h1{font-size:3em;} 
+    header p{font-size:1.2em;} 
+    .exit-btn { top:10px; right:15px; padding:10px 15px; font-size:0.8em; }
+}
+/* robotic */
+{
+    
+}
+</style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav>
+    <a href="#about">About</a>
+    <a href="#features">Features</a>
+</nav>
+
+<header>
+    <h1>CIS Sikar Robotics Lab</h1>
+    <p>Innovating Tomorrow, One Robot at a Time</p>
+
+    <!-- Floating shapes -->
+    <div class="shape" style="width:100px;height:100px;top:20%;left:10%;animation-delay:0s;"></div>
+    <div class="shape" style="width:70px;height:70px;top:40%;left:80%;background:#ff3c78;animation-delay:2s;"></div>
+    <div class="shape" style="width:50px;height:50px;top:70%;left:30%;animation-delay:4s;"></div>
+</header>
+
+</style>
+
+<!-- About Section -->
+<section id="about">
+    <h2>About Robotics</h2>
+    <p>
+        Robotics integrates AI, automation, and engineering to build intelligent machines.
+        CIS Sikar Robotics Lab provides students and researchers with high-tech robotic arms,
+        drones, and autonomous systems for cutting-edge experimentation and real-world applications.
+    </p>
+</section>
+
+<!-- Features Section -->
+<section id="features">
+    <h2>Lab Features</h2>
+    <div class="features">
+
+        <div class="card">
+            <img src="robotic arm.jfif" alt="Robotic Arms at CIS Sikar">
+            <h3>Robotic Arms</h3>
+            <p>High-precision robotic arms at CIS Sikar for industrial and academic research in automation.</p>
+        </div>
+
+        <div class="card">
+            <img src="car.jfif" alt="Bluetooth car at CIS Sikar">
+            <h3>Bluetooth car</h3>
+            <p>Autonomous Bluetooth car for navigation, coding, and AI integration experiments.</p>
+        </div>
+
+        <div class="card">
+            <img src="drone.jfif" alt="Drones at CIS Sikar">
+            <h3>Drones</h3>
+            <p>Advanced drones for aerial robotics, automation training, and real-world applications.</p>
+        </div>
+
+    </div>
+</section>
+
+<!-- Exit Button -->
+<button class="exit-btn" onclick="goBack()">Back to explore CIS</button>
+
+<script>
+function goBack() {
+    if (window.history.length > 1) {
+        window.history.back();
+    } else {
+        window.location.href = "explore.html";
+    }
+}
+</script>
+
+<!-- Footer -->
+<footer>
+    &copy; 2025 CIS Sikar Robotics Lab. All rights reserved.
+</footer>
+
+</body>
+</html>
